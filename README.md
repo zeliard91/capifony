@@ -21,8 +21,8 @@ or if you prefer to forward your ssh agent :
 docker run \
     -it \
     --rm \
-    -e ${SSH_AUTH_SOCK} \
-    -v ${SSH_AUTH_SOCK}:${SSH_AUTH_SOCK} \
+    -e SSH_AUTH_SOCK=${SSH_AUTH_SOCK} \
+    -v $(dirname $SSH_AUTH_SOCK):$(dirname $SSH_AUTH_SOCK) \
     -v ${PWD}:/root/workdir \
     zeliard91/capifony
 ```
